@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            @import url(style.css);
+            p.highlight {
+                color: red;
+            }
+            svg {
+                background-color: rgb(41, 41, 36);
+            }
+        </style>
+        <script src="svgelement.js"></script>
+        <script src="observable.js"></script>
+        <script src="asteroids.js"></script>
+        
+    </head>
+    <body>
+        <h1 style =  "transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; -o-transition: .5s; font-family: georgia,garamond,serif;text-align: center;">ASTEROID GAME</h1>
+        <h2 style =  "transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; -o-transition: .5s; font-family: georgia,garamond,serif;text-align: center;">[Programming Paradigm Assignment 1]</h2>
+        <p id="score" style = "color:blue;font-family:georgia,garamond,serif;font-size:20px;font-weight:bold;text-align: center;">SCORE: </p>
+        <p id="life" style = "color:blue;font-family:georgia,garamond,serif;font-size:20px;font-weight:bold;text-align: center;">LIFE:</p>
+        <p id="level" style = "color:blue;font-family:georgia,garamond,serif;font-size:20px;font-weight:bold;text-align: center;">LEVEL:</p>
+        <p style = "color:red;font-family:georgia,garamond,serif;font-size:20px;font-weight:bold;text-align: center;">SCROLL DOWN TO PLAY</p>
+        <p>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:22px;font-weight:bold;text-decoration: underline;">Instruction to play the game</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">1. Press "I" to move forward, "K" to move backward, "J" to rotate left and "L" to rotate right. Press Spacebar to shoot.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">2. In every 5 seconds, one asteroid will be spawned from the top left corner of the canva.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">3. Big asteroids when destroyed will spawn 2 small asteroids. You need to shoot the small asteroids to destroy the asteroid entirely.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">4. For every big asteroid you destroy, you get 10 points. For every small asteroid you destroy, you get 5 points.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">5. If your spaceship collides with either big or small asteroid, your life count will decrease by 1.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">6. You have 3 lives initially, when your life count turns 0. You lose the game.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">7. There is a special ability of your bullet. Your bullet will not disappear after you shoot. It will continue to destroy other asteroids in its trajectory.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">8. Press the 'Start' button to start the game. Clicking multiple times wont restart the game.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">9. When you hit 30 points, you will enter level 2, 50 points to level 3 and 100 points to level 4. The speed of asteroid spawning will increase one fold every level you up.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">10. The only way to win the game is to score as much as possible. However, there is a hidden feasture that the more you score, the slower your bullet is.</div>
+            <div style = "color:black;font-family:georgia,garamond,serif;font-size:20px;">11. Lastly, HAVE FUN ! Remember to scroll down to play the game!</div>
+        </p>
+        <p><button onclick='startGame();this.disabled=true;' style= "background-color: rgb(26, 221, 221); color:black;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">START</button></p>
+        <svg id="canvas" width="600" height="600" style = "background-color: rgb(6, 6, 117);"/>
+            
+        </div>
+    </body>
+</html>
